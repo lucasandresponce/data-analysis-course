@@ -10,11 +10,7 @@
 
 ## Parte 1 — Exploración
 
-### Pista 1
-
-Antes de responder cualquier pregunta necesitas conocer el dataset.
-
-Pregúntate:
+**Pista 1:** Antes de responder cualquier pregunta necesitas conocer el dataset. Pregúntate:
 
 - ¿Cómo veo las primeras filas?
 - ¿Cómo conozco la cantidad de registros?
@@ -22,11 +18,7 @@ Pregúntate:
 
 
 
-### Pista 2
-
-Si quieres saber si existen valores faltantes, recuerda que Pandas posee métodos para detectar valores nulos.
-
-Además, puedes contar cuántos tiene cada columna.
+**Pista 2:** Si quieres saber si existen valores faltantes, recuerda que Pandas posee métodos para detectar valores nulos. Además, puedes contar cuántos tiene cada columna.
 
 
 ## Parte 2 — Agrupaciones
@@ -35,106 +27,58 @@ Además, puedes contar cuántos tiene cada columna.
 
 > ¿Cuántos títulos existen por país?
 
-#### Pista
-
-La respuesta no requiere recorrer el DataFrame.
-
-Piensa:
-
-> "Quiero agrupar todas las filas que tengan el mismo país."
-
-Luego debes calcular una métrica sobre cada grupo.
+**Pista:** La respuesta no requiere recorrer el DataFrame. Piensa: "Quiero agrupar todas las filas que tengan el mismo país". Luego debes calcular una métrica sobre cada grupo.
 
 
 ### Ejercicio 2
 
 > ¿Cuántas películas y cuántas series existen?
 
-#### Pista
-
-La columna `type` solamente posee dos valores posibles.
-
-Agrupa por esa columna.
-
-
+**Pista:** La columna `type` solamente posee dos valores posibles. Agrupa por esa columna.
 
 ### Ejercicio 3
 
 > ¿Cuántos títulos fueron lanzados cada año?
 
-#### Pista
-
-La columna que necesitas ya existe en el dataset.
-
-Después del agrupamiento recuerda ordenar los años de menor a mayor.
-
+**Pista:** La columna que necesitas ya existe en el dataset. Después del agrupamiento recuerda ordenar los años de menor a mayor.
 
 
 ### Ejercicio 4
 
 > ¿Cuál es la clasificación por edades más frecuente?
 
-#### Pista
-
-Agrupa por la columna correspondiente y cuenta los registros.
-
-Luego ordena el resultado de mayor a menor.
+**Pista:** Agrupa por la columna correspondiente y cuenta los registros. Luego ordena el resultado de mayor a menor.
 
  
-
 ### Ejercicio 5
 
 > Obtener varias métricas por tipo de contenido.
 
-#### Pista
-
-No hagas cuatro `groupby()` distintos.
-
-Existe un método que permite calcular varias métricas en una sola operación.
-
-Piensa en:
-
-```
-agg(...)
-```
+**Pista:** No hagas cuatro `groupby()` distintos. Existe un método que permite calcular varias métricas en una sola operación. Piensa en: `agg(...)`
 
  
 
-# Parte 3 — Agrupaciones múltiples
+## Parte 3 — Agrupaciones múltiples
 
 ### Ejercicio 6
 
 > Agrupar por país y tipo.
 
-#### Pista
+**Pista:** `groupby()` puede recibir más de una columna. En lugar de escribir una columna, prueba pasar una lista.
 
-`groupby()` puede recibir más de una columna.
-
-En lugar de escribir una columna, prueba pasar una lista.
-
- 
 
 ### Ejercicio 7
 
 > Convertir el resultado en una tabla.
 
-#### Pista
-
-El resultado anterior tiene un índice con varios niveles.
-
-Existe un método que transforma uno de esos niveles en columnas.
-
-No necesitas volver a hacer el `groupby()`.
+**Pista:** El resultado anterior tiene un índice con varios niveles. Existe un método que transforma uno de esos niveles en columnas. No necesitas volver a hacer el `groupby()`.
 
  
-
-# Parte 4 — Pivot Tables
+## Parte 4 — Pivot Tables
 
 ### Ejercicio 8
 
-#### Pista
-
-Pregúntate:
+**Pista:** Pregúntate:
 
 - ¿Qué columna quiero como filas?
 - ¿Cuál quiero como columnas?
@@ -143,70 +87,36 @@ Pregúntate:
 Con esas tres respuestas puedes construir una `pivot_table()`.
 
  
-
 ### Ejercicio 9
 
-#### Pista
+**Pista:** La lógica es exactamente la misma. Solo cambian las columnas utilizadas.
 
-La lógica es exactamente la misma.
-
-Solo cambian las columnas utilizadas.
-
- 
 
 ### Ejercicio 10
 
-#### Pista
-
-Si una combinación no existe, Pandas coloca:
-
-```
-NaN
-```
-
-Busca un parámetro dentro de `pivot_table()` que permita reemplazar esos valores automáticamente.
+**Pista:** Si una combinación no existe, Pandas coloca: `NaN`. Busca un parámetro dentro de `pivot_table()` que permita reemplazar esos valores automáticamente.
 
  
-
-# Parte 5 — Visualización
+## Parte 5 — Visualización
 
 ### Ejercicio 11
 
-#### Pista
+**Pista:** Puedes crear gráficos directamente desde un DataFrame o una Series. No es necesario llamar a Matplotlib para dibujar las barras, solo lo utilizarás para personalizar el gráfico.
 
-Puedes crear gráficos directamente desde un DataFrame o una Series.
-
-No es necesario llamar a Matplotlib para dibujar las barras.
-
-Solo lo utilizarás para personalizar el gráfico.
-
- 
 
 ### Ejercicio 12
 
-#### Pista
+**Pista:** Primero obtén la cantidad de películas y series, después grafica ese resultado.
 
-Primero obtén la cantidad de películas y series.
-
-Después grafica ese resultado.
-
- 
 
 ### Ejercicio 13
 
-#### Pista
+**Pista:** La tabla dinámica que construiste anteriormente ya está lista para ser graficada. No necesitas volver a calcularla.
 
-La tabla dinámica que construiste anteriormente ya está lista para ser graficada.
 
-No necesitas volver a calcularla.
+## Desafío — Calidad de datos
 
- 
-
-# Desafío — Calidad de datos
-
-Durante el análisis quizá notes algo extraño.
-
-Por ejemplo:
+Durante el análisis quizá notes algo extraño. Por ejemplo:
 
 ```
 United States
@@ -218,27 +128,14 @@ United States, India
 
  
 
-### Pista 1
-
-Observa con atención algunos valores de la columna `country`.
-
-¿Qué tienen en común?
+**Pista 1:** Observa con atención algunos valores de la columna `country`. ¿Qué tienen en común?
 
  
 
-### Pista 2
-
-Algunas filas contienen varios países separados por comas.
-
-Tal vez primero necesites convertir ese texto en una lista.
-
-Piensa en los métodos para trabajar con cadenas (`str`).
+**Pista 2:** Algunas filas contienen varios países separados por comas. Tal vez primero necesites convertir ese texto en una lista. Piensa en los métodos para trabajar con cadenas (`str`).
 
  
-
-### Pista 3
-
-Una vez que tengas una lista de países, existe un método de Pandas capaz de convertir:
+**Pista 3:** Una vez que tengas una lista de países, existe un método de Pandas capaz de convertir:
 
 ```
 ["Argentina", "Brasil"]
@@ -251,27 +148,17 @@ en
 | Argentina |
 | Brasil |
 
-Investiga el método:
-
-```
-explode()
-```
+Investiga el método: `explode()`
 
  
 
-# Insights
+## Insights
 
-Esta sección no evalúa únicamente código.
-
-También evalúa tu capacidad de interpretar los resultados.
-
-No escribas simplemente:
+Esta sección no evalúa únicamente código. También evalúa tu capacidad de interpretar los resultados. No escribas simplemente:
 
 > "Estados Unidos tiene más títulos."
 
-Eso es un dato.
-
-Piensa mejor:
+Eso es un dato. Piensa mejor:
 
 - ¿Qué significa ese resultado?
 - ¿Cómo podría utilizar Netflix esa información?
@@ -285,7 +172,7 @@ Recuerda:
 
  
 
-# Si te bloqueas...
+## Si te bloqueas...
 
 Antes de buscar la solución intenta responder estas preguntas:
 
@@ -297,3 +184,5 @@ Antes de buscar la solución intenta responder estas preguntas:
 - ¿Sería más claro mostrarlo con un gráfico?
 
 Muchas veces responder esas preguntas es suficiente para descubrir la solución.
+
+[<- Volver a los ejercicios](notebook.ipynb)
