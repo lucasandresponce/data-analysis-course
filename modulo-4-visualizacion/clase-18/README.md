@@ -87,11 +87,12 @@ ax.grid(alpha=0.3)
 plt.show()
 ```
 
+![imagen01-clase18](../../assets/clase-18/imagen01-clase18.png)
+
 Ese pico solitario que se dispara del resto en la hora 15 es un dato que no encaja con el resto — un salto brusco que no tiene continuidad con lo que vino antes ni con lo que viene después. Ese es tu sensor defectuoso: lo acabas de encontrar mirando un gráfico de líneas, sin calcular nada todavía.
 
 **Sobre el `set_ylim(0, ...)`:** arrancar el eje en 0 no es obligatorio en líneas (lo que importa es la pendiente relativa), pero sí es una decisión a tomar con cuidado. Si cortas el eje de forma agresiva, una variación pequeña se puede leer como un cambio enorme — como fotografiar una vara de un metro mostrando solo los últimos 5 centímetros: esos 5 centímetros ocupan toda la foto y parecen "todo".
 
----
 
 ### Barras: para comparar grupos
 
@@ -122,6 +123,7 @@ Mañana     162.1
 Noche      154.7
 Name: consumo_kwh, dtype: float64
 ```
+![imagen02-clase18](../../assets/clase-18/imagen02-clase18.png)
 
 Dos reglas para tener siempre presentes con barras:
 
@@ -190,6 +192,8 @@ ax.set_title("Temperatura vs. Consumo eléctrico")
 plt.show()
 ```
 
+![imagen04-clase18](../../assets/clase-18/imagen04-clase18.png)
+
 Ahí tienes algo que un número solo no te muestra tan claro: la mayoría de los puntos siguen una tendencia bastante clara (a más temperatura, más consumo), pero hay un punto suelto, lejos de la nube principal — el mismo sensor defectuoso que ya habías detectado en el gráfico de líneas. Ese único punto alcanza para distorsionar cualquier cálculo de correlación que hagas sobre estos datos, y en un scatter, es imposible no verlo.
 
 **La trampa más importante que vas a ver en todo el curso:** que dos variables se muevan juntas no significa que una cause la otra. Ejemplo clásico: en verano suben tanto la venta de helados como los ahogamientos en piscina. El helado no causa ahogamientos — el calor causa las dos cosas al mismo tiempo. Cada vez que veas una tendencia en un scatter, la pregunta siguiente tiene que ser "¿por qué podría existir esta relación?", no darla por causal automáticamente.
@@ -227,6 +231,8 @@ for i in range(len(columnas_numericas)):
 plt.tight_layout()
 plt.show()
 ```
+
+![imagen05-clase18](../../assets/clase-18/imagen05-clase18.png) 
 
 Un detalle que muchos pasan por alto: no cualquier paleta de colores sirve. La paleta clásica "arcoíris" (`jet`) hace que el ojo perciba algunos tramos de color como saltos más grandes de lo que realmente son en los números — puede hacerte ver un patrón que no existe. Por eso usamos `"coolwarm"`, pensada para datos con un punto neutro en el medio (aquí, correlación = 0), fijando `vmin=-1, vmax=1` para que ese punto neutro quede exactamente centrado en el 0.
 
